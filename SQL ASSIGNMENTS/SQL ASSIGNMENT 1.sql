@@ -323,15 +323,6 @@ inner join Products p on od.ProductID = p.ProductID
 where c.CustomerID = 5
 group by c.CustomerID, c.FirstName, c.LastName
 
---6. Write an SQL query to find the customers who have placed the most orders. List their names and the number of orders they've placed.
-
-
---7. Write an SQL query to find the most popular product category, which is the one with the highest total quantity ordered across all orders.
-
-
---8. Write an SQL query to find the customer who has spent the most money (highest total revenue) on electronic gadgets. List their name and total spending.
-
-
 --9. Write an SQL query to calculate the average order value (total revenue divided by the number of orders) for all customers.
 
 select sum(od.Quantity * p.Price) / count(distinct o.OrderID) as AverageOrderValue from Orders o

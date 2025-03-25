@@ -369,7 +369,7 @@ group by c.CourierID,c.SenderName, c.ReceiverName,c.Weight,c.Status,c.TrackingNu
 --32. List Payments Within a Date Range 
 
 select paymentID, CourierID,Amount from Payment 
-where amount between 300 and 450
+where PaymentDate between '2025-03-23' and '2025-03-27'
 
 --33. Retrieve a list of all users and their corresponding courier records, including cases where there are no matches on either side
 

@@ -271,11 +271,14 @@ group by l.LocationName
 
 --20. Retrieve couriers who have received payments totaling more than $1000 in a specific location (LocationID = X): 
 
-select c.CourierID, c.SenderName,c.SenderAddress, c.ReceiverName, c.ReceiverAddress,c.Weight,c.Status,c.TrackingNumber,c.Deliverydate
+select c.CourierID, c.SenderName, c.ReceiverName,c.Weight,c.Status,c.TrackingNumber,c.Deliverydate,sum(p.Amount)
 from Courier c inner join Payment p
 on c.CourierID=p.CourierID
 inner join Location l on l.LocationID=p.LocationId
-where p.Amount >200 and l.LocationID=105
+where l.LocationID=105
+group by c.CourierID,c.SenderName,c.ReceiverName,c.Weight,c.Status,c.TrackingNumber,c.Deliverydate
+having sum(p.Amount)>200
+  
 
 --21. Retrieve couriers who have received payments totaling more than $1000 after a certain date (PaymentDate > 'YYYY-MM-DD'): 
 

@@ -133,7 +133,7 @@ select FirstName,LastName,Email from Customers
 
 --2. Write an SQL query to list all orders with their order dates and corresponding customer names.
 
-select o.OrderID, o.OrderDate, c.Firstname+' '+Lastname as CustomerName from Orders o inner join Customers c on o.CustomerId = c.CustomerId
+select o.OrderID, o.OrderDate, c.Firstname+' '+c.Lastname as CustomerName from Orders o inner join Customers c on o.CustomerId = c.CustomerId
 
 -- 3. Write an SQL query to insert a new customer record into the "Customers" table. Include customer information such as name, email, and address.
 

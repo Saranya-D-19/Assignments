@@ -113,7 +113,7 @@ select balance from Accounts where account_id = 2
 
 --9.Write a SQL query to List all current accounts with a balance greater than $1,000.
 
-select account_id , account_type from Accounts where balance > 1000
+select account_id , account_type from Accounts where account_type='current' and balance > 1000
 
 --10. Write a SQL query to Retrieve all transactions for a specific account.
 

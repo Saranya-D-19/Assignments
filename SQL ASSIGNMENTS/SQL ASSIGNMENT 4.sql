@@ -259,8 +259,8 @@ order by Avg_Delivery_time desc
 select l.LocationName, sum(p.Amount)
 from Location l inner join Payment p
 on l.LocationID=p.LocationId
-where p.Amount< 200
 group by l.LocationName
+having sum(p.Amount)<200
 
 --19. Calculate Total Payments per Location 
 
